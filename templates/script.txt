@@ -1,0 +1,9 @@
+{% for i in images%}
+const base64data{{i.id}} = 'data:image/png;base64,{{i.base64}}';
+{% endfor %}
+{% for i in nodes %}
+{% if not (i.image == 0) %}
+const imageElement{{i.id}} = document.getElementById('i{{i.id}}');
+imageElement{{i.id}}.setAttribute('href', base64data{{i.image}});
+{% endif %}
+{% endfor %}

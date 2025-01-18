@@ -1,0 +1,4 @@
+{%if history_size > 0%}We have previously brainstormed topics: [{%for history in historys %}{%if not loop.is_last%}{{history}}, {%else%}{{history}} {%endif%}{%endfor%}{%if history_size > 1%}] in sequence.{%endif%} Next {%endif%}Please brainstorm around "{{keyword}}" and generate a JSON output. The output contains a list called "topics", each element of which is a dictionary containing two keys "topic" and "explanation". The value of "topic" is a broad description of the topic related to the keyword "{{keyword}}", and the value of "explanation" is a brief explanation of the topic. Please make sure the generated topics are relevant and only return the most relevant items.
+Please notice:
+1.Only JSON object needed, no more advice.
+2.Do not push yourself, only choose the most related topics.

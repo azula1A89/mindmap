@@ -1,0 +1,75 @@
+<svg width="{{width+100}}" height="{{height+100}}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    {% for i in images%}
+    <symbol id="image{{i.id}}">
+    <image href="data:image/png;base64,{{i.base64}}" />
+    </symbol>
+    {% endfor %}
+  </defs>
+  <g>
+    <rect x="0" y="0" width="{{width+graph_padding*2}}" height="{{height+graph_padding*2}}" fill="{{background_color}}" stroke="black" stroke-width="2"/>
+    {% if cluster_count > 0 %}
+    {% for cluster in clusters %}
+      <rect x="{{cluster.rect_x}}" y="{{cluster.rect_y}}" width="{{cluster.rect_width}}" height="{{cluster.rect_height}}" fill="{{cluster.background_color_str}}" stroke="{{cluster.border_color_str}}" stroke-width="2" rx="5"/>
+      <text x="{{cluster.rect_x}}" y="{{cluster.rect_y + cluster.font_size}}" font-size="{{cluster.font_size}}px" fill="{{cluster.text_color_str}}" stroke="{{cluster.text_color_str}}">
+        {% set lines = split(cluster.label, "\n") %}
+        {% for line in lines %}
+          {% if loop.is_first %}
+            <tspan x="{{cluster.rect_x}}" dy="">{{line}}</tspan>
+          {%else%}
+            <tspan x="{{cluster.rect_x}}" dy="{{ cluster.font_size }}">{{line}}</tspan>
+          {%endif%}
+        {% endfor %}
+      </text>
+    {% endfor %}
+    {% endif %}
+
+    {% if edge_count > 0 %}
+    {% for edge in edges %}
+      <polyline points="{% for p in edge.polyline %} {{p.x}},{{p.y}} {% endfor %}" fill="none" stroke="{{edge.edge_color_str}}" stroke-width="2"/>
+      {%  if edge.arrow_type == 0 %}
+      <line x1="{{edge.arrow_ear1_x}}" y1="{{edge.arrow_ear1_y}}" x2="{{last(edge.polyline).x}}" y2="{{last(edge.polyline).y}}" stroke="{{edge.edge_color_str}}" stroke-width="2"/>
+      <line x1="{{edge.arrow_ear2_x}}" y1="{{edge.arrow_ear2_y}}" x2="{{last(edge.polyline).x}}" y2="{{last(edge.polyline).y}}" stroke="{{edge.edge_color_str}}" stroke-width="2"/>
+      {% else if edge.arrow_type == 1 %}
+      <line x1="{{edge.arrow_ear1_x}}" y1="{{edge.arrow_ear1_y}}" x2="{{last(edge.polyline).x}}" y2="{{last(edge.polyline).y}}" stroke="{{edge.edge_color_str}}" stroke-width="2"/>
+      <line x1="{{edge.arrow_ear2_x}}" y1="{{edge.arrow_ear2_y}}" x2="{{last(edge.polyline).x}}" y2="{{last(edge.polyline).y}}" stroke="{{edge.edge_color_str}}" stroke-width="2"/>
+      <line x1="{{edge.arrow_ear3_x}}" y1="{{edge.arrow_ear3_y}}" x2="{{first(edge.polyline).x}}" y2="{{first(edge.polyline).y}}" stroke="{{edge.edge_color_str}}" stroke-width="2"/>
+      <line x1="{{edge.arrow_ear4_x}}" y1="{{edge.arrow_ear4_y}}" x2="{{first(edge.polyline).x}}" y2="{{first(edge.polyline).y}}" stroke="{{edge.edge_color_str}}" stroke-width="2"/>
+      {% endif %}
+      <rect x="{{edge.label_x}}" y="{{edge.label_y}}" width="{{edge.label_width+edge.font_size*0.5}}" height="{{edge.label_height}}" fill="{{background_color}}" stroke="none" stroke-width="2" rx="5"/>
+      <text  x="{{edge.label_x + 0.25*edge.font_size}}" y="{{edge.label_y+edge.font_size}}" font-size="{{edge.font_size}}px" fill="{{edge.text_color_str}}" stroke="{{edge.text_color_str}}">
+        {% set lines = split(edge.label, "\n") %}
+        {% for line in lines %}
+          {% if loop.is_first %}
+            <tspan x="{{edge.label_x}}" dy="0">{{line}}</tspan>
+          {%else%}
+            <tspan x="{{edge.label_x}}" dy="1em">{{line}}</tspan>
+          {%endif%}
+        {% endfor %}
+      </text>
+    {% endfor %}
+    {% endif %}
+
+    {% if node_count > 0 %}
+    {% for node in nodes  %}
+    <rect x="{{node.rect_x}}" y="{{node.rect_y}}" width="{{node.rect_width}}" height="{{node.rect_height}}" fill="{{node.background_color_str}}" stroke="{{node.border_color_str}}" stroke-width="2" rx="5"/>
+    <use x="{{node.rect_x}}" y="{{node.rect_y}}" transform-origin="{{node.rect_x}} {{node.rect_y}}" transform="scale({{node.image_scale}})" xlink:href="#image{{node.image}}"/>
+    <text x="{{node.rect_x + 0.5*(node.rect_width - node.label_width)}}" y="{{node.rect_y + node.font_size + 0.5*(node.rect_height - node.label_height + node.image_height)}}" font-size="{{node.font_size}}px" fill="{{node.text_color_str}}" stroke="{{node.text_color_str}}">
+      {% set lines = split(node.label, "\n") %}
+      {% for line in lines %}
+        {% if loop.is_first %}
+          <tspan x="{{node.rect_x + 0.5*(node.rect_width - node.label_width)}}" dy="0">{{line}}</tspan>
+        {%else%}
+          <tspan x="{{node.rect_x + 0.5*(node.rect_width - node.label_width)}}" dy="1em">{{line}}</tspan>
+        {%endif%}
+      {% endfor %}
+    </text>
+
+    {% endfor %}
+    {% endif %}
+
+  </g>
+
+</svg>
+
+
