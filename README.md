@@ -41,7 +41,7 @@ A simple yet fast mind map editor written in C++. You can also call LLM to get s
 # Build Environment
 Only Windows-MSYS2-UCRT64 tested.
 
-[![Watch the video](https://raw.githubusercontent.com/azula1A89/mindmap/dev/docs/pictures/thumbnail.png)](https://raw.githubusercontent.com/azula1A89/mindmap/dev/docs/video/demo.mp4)
+[![Watch the video](https://raw.githubusercontent.com/azula1A89/mindmap/main/docs/pictures/thumbnail.png)](https://raw.githubusercontent.com/azula1A89/mindmap/main/docs/video/demo.mp4)
 
 
 # third-party code
