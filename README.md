@@ -1,5 +1,5 @@
 # mindmap
-A simple yet fast mind map editor written in C++. You can also call LLM to get some inspiration (if you run LLM locally with Ollama).
+A simple yet fast mindmap editor written in C++. You can also call LLM to get some inspiration (if you run LLM locally with Ollama).
 
 # features
 * GUI style dark/light/classic
@@ -14,6 +14,7 @@ A simple yet fast mind map editor written in C++. You can also call LLM to get s
 * Call LLM to generate context related ideas.
 * You can modify prompt(for calling LLM) template as your wish.
 * You can select which LLM model to call by right click "ai." button.
+* Only supports Windows operating system.
 
 
 # Tips
@@ -39,7 +40,7 @@ A simple yet fast mind map editor written in C++. You can also call LLM to get s
   * You can remove bending points on an edge by right-clicking the item in the edge table then click "reset" in the context menu.
 
 # Build Environment
-Only Windows-MSYS2-UCRT64 tested.
+Only Windows-MSYS2-UCRT64 surported. Try [binary](https://github.com/azula1A89/mindmap/releases/download/tagv1.0.0/bin.zip)
 
 [![Watch the video](https://raw.githubusercontent.com/azula1A89/mindmap/main/docs/pictures/thumbnail.png)](https://raw.githubusercontent.com/azula1A89/mindmap/main/docs/video/demo.mp4)
 
@@ -51,6 +52,8 @@ Only Windows-MSYS2-UCRT64 tested.
   * glfw: https://www.glfw.org/
   * httplib: https://github.com/yhirose/cpp-httplib
   * imgui: https://github.com/ocornut/imgui
+  * imgui_markdown https://github.com/juliettef/imgui_markdown
+  * imgui-node-editor https://github.com/thedmd/imgui-node-editor
   * inja: https://github.com/pantor/inja
   * json: https://github.com/nlohmann/json
   * adaptagrams: https://github.com/mjwybrow/adaptagrams
