@@ -42,8 +42,7 @@ A simple yet fast mindmap editor written in C++. You can also call LLM to get so
 # Build Environment
 Only Windows-MSYS2-UCRT64 surported. Try [binary](https://github.com/azula1A89/mindmap/releases/download/tagv1.0.0/bin.zip)
 
-[![Watch the video](https://raw.githubusercontent.com/azula1A89/mindmap/main/docs/pictures/thumbnail.png)](https://raw.githubusercontent.com/azula1A89/mindmap/main/docs/video/demo.mp4)
-
+[![Watch the video](https://raw.githubusercontent.com/azula1A89/mindmap/main/docs/pictures/thumbnail.png)](https://github.com/user-attachments/assets/be4c39d2-5789-451f-b4c7-4e02d0903eb0)
 
 # third-party code
   * base64: https://github.com/tobiaslocker/base64
