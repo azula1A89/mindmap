@@ -40,7 +40,7 @@ A simple yet fast mindmap editor written in C++. You can also call LLM to get so
   * You can remove bending points on an edge by right-clicking the item in the edge table then click "reset" in the context menu.
 
 # Build Environment
-Only Windows-MSYS2-UCRT64 surported. Try [binary](https://github.com/azula1A89/mindmap/releases/download/tagv1.0.0/bin.zip)
+Only Windows-MSYS2-UCRT64 supported. Try [binary](https://github.com/azula1A89/mindmap/releases/download/tagv1.0.0/bin.zip)
 
 [![Watch the video](https://raw.githubusercontent.com/azula1A89/mindmap/main/docs/pictures/thumbnail.png)](https://github.com/user-attachments/assets/be4c39d2-5789-451f-b4c7-4e02d0903eb0)
 
