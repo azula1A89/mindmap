@@ -14,8 +14,8 @@ A simple yet fast mindmap editor written in C++. You can also call LLM to get so
 * Call LLM to generate context related ideas.
 * You can modify prompt(for calling LLM) template as your wish.
 * You can select which LLM model to call by right click "ai." button.
-* Only supports Windows operating system.
 
+[![Watch the video](https://raw.githubusercontent.com/azula1A89/mindmap/main/docs/pictures/thumbnail.png)](https://github.com/user-attachments/assets/be4c39d2-5789-451f-b4c7-4e02d0903eb0)
 
 # Tips
   * Double-click blank aera to create a node.
@@ -39,10 +39,22 @@ A simple yet fast mindmap editor written in C++. You can also call LLM to get so
   * Use locking if you do not want the auto-layout algorithm to change the position of a node or group.
   * You can remove bending points on an edge by right-clicking the item in the edge table then click "reset" in the context menu.
 
-# Build Environment
-Only Windows-MSYS2-UCRT64 supported. Try [binary](https://github.com/azula1A89/mindmap/releases/download/tagv1.0.0/bin.zip)
 
-[![Watch the video](https://raw.githubusercontent.com/azula1A89/mindmap/main/docs/pictures/thumbnail.png)](https://github.com/user-attachments/assets/be4c39d2-5789-451f-b4c7-4e02d0903eb0)
+# Build Environment
+Only [Windows-MSYS2-UCRT64](https://www.msys2.org/docs/environments/) supported(currently). Try [binary](https://github.com/azula1A89/mindmap/releases/download/tagv1.0.0/bin.zip).
+I am not familiar with the Linux environment, so I have only compiled and tested it under the Windows operating system.
+
+## How to build
+
+After installing the environment, open the MSYS2-UCRT64 shell and execute the following command:
+```shell
+git clone https://github.com/azula1A89/mindmap.git
+cd mindmap
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make
+```
 
 # third-party code
   * base64: https://github.com/tobiaslocker/base64
