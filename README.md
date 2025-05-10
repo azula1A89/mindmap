@@ -43,6 +43,15 @@ A simple yet fast mindmap editor written in C++. You can also call LLM to get so
 # Build Environment
 Only [Windows-MSYS2-UCRT64](https://www.msys2.org/docs/environments/) supported(currently). Try [binary](https://github.com/azula1A89/mindmap/releases/download/tagv1.0.0/bin.zip).
 I am not familiar with the Linux environment, so I have only compiled and tested it under the Windows operating system.
+## How to install build environment
+Following [guide](https://www.msys2.org/) download and install the installer. 
+Then open the MSYS2-UCRT64 shell and install these packages:
+```shell 
+pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
+pacman -S git
+pacman -S mingw-w64-ucrt-x86_64-cmake
+pacman -S mingw-w64-ucrt-x86_64-glfw
+```
 
 ## How to build
 
@@ -53,7 +62,7 @@ cd mindmap
 mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
-make
+ninja
 ```
 
 # third-party code
