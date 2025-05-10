@@ -38,7 +38,8 @@ A simple yet fast mindmap editor written in C++. You can also call LLM to get so
   * CTRL + Y to redo.
   * Use locking if you do not want the auto-layout algorithm to change the position of a node or group.
   * You can remove bending points on an edge by right-clicking the item in the edge table then click "reset" in the context menu.
-
+  * Press the Tab key to add a child node to the selected node.
+  * Press Enter to add a sibling node to the selected node.
 
 # Build Environment
 Only [Windows-MSYS2-UCRT64](https://www.msys2.org/docs/environments/) supported(currently). Try [binary](https://github.com/azula1A89/mindmap/releases/download/tagv1.0.0/bin.zip).
