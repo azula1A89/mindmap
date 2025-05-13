@@ -40,6 +40,10 @@ A simple yet fast mindmap editor written in C++. You can also call LLM to get so
   * You can remove bending points on an edge by right-clicking the item in the edge table then click "reset" in the context menu.
   * Press the Tab key to add a child node to the selected node.
   * Press Enter to add a sibling node to the selected node.
+> [!IMPORTANT]
+> Mindmap works best with LLM models that support Structured Output (such as granite3.2 and gemma 3). Using other models may result in incorrect output schemas and ingestion failures. This is particularly problematic when using smaller models.
+> Layout or routing continuously may cause serious performence issues.
+
 
 # Build Environment
 Only [Windows-MSYS2-UCRT64](https://www.msys2.org/docs/environments/) supported(currently). Try [binary](https://github.com/azula1A89/mindmap/releases/download/tagv1.0.0/bin.zip).
