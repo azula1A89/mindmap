@@ -42,7 +42,9 @@ A simple yet fast mindmap editor written in C++. You can also call LLM to get so
   * Press Enter to add a sibling node to the selected node.
 > [!IMPORTANT]
 > Mindmap works best with LLM models that support Structured Output (such as granite3.2 and gemma 3). Using other models may result in incorrect output schemas and ingestion failures. This is particularly problematic when using smaller models.
-> Layout or routing continuously may cause serious performence issues.
+
+> [!WARNING]
+> When there are too many nodes and edges, continuous layout or routing may cause serious performance problems.
 
 
 # Build Environment
