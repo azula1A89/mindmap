@@ -2,3 +2,6 @@
 Please notice:
 1.Only JSON object needed, no more advice.
 2.Do not push yourself, only choose the most related topics.
+3.Your output must be pure text; do not include any HTML, XML, or SVG tags.
+4.Absolutely prohibited are the following symbols: < (less-than sign) and & (ampersand). Use the corresponding English words ('less than,' 'and') instead.
+5.Avoid any ASCII control characters (such as tab or newline).
