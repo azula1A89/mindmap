@@ -15,13 +15,9 @@ A simple yet fast mindmap editor written in C++. You can also call LLM to get so
 * You can modify prompt(for calling LLM) template as your wish.
 * You can select which LLM model to call by right click "ai." button.
 
+[![Watch the video]()](https://github.com/user-attachments/assets/2f3e5739-ed08-42fb-b891-d3a2e4bd7747)
 
-https://github.com/user-attachments/assets/2f3e5739-ed08-42fb-b891-d3a2e4bd7747
-
-
-
-https://github.com/user-attachments/assets/deebef2b-d5c0-4eb4-b1f5-50f5b00f36c8
-
+[![Watch the video](https://raw.githubusercontent.com/azula1A89/mindmap/main/docs/pictures/thumbnail.png)](https://github.com/user-attachments/assets/deebef2b-d5c0-4eb4-b1f5-50f5b00f36c8)
 
 # Tips
   * Double-click blank aera to create a node.
