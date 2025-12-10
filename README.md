@@ -17,6 +17,8 @@ A simple yet fast mindmap editor written in C++. You can also call LLM to get so
 
 [![Watch the video](https://raw.githubusercontent.com/azula1A89/mindmap/main/docs/pictures/thumbnail.png)](https://github.com/user-attachments/assets/b427da55-4c4d-472d-9580-2987bb403c2f)
 
+[![Watch the video](https://raw.githubusercontent.com/azula1A89/mindmap/main/docs/pictures/thumbnail2.png)](https://github.com/user-attachments/assets/f8e41c76-3b7e-41ab-83f5-5bba669d5cff)
+
 [![Watch the video](https://raw.githubusercontent.com/azula1A89/mindmap/main/docs/pictures/thumbnail1.png)](https://github.com/user-attachments/assets/2f3e5739-ed08-42fb-b891-d3a2e4bd7747)
 
 # Tips
