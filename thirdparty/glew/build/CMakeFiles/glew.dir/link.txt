@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libGLEW.so.2.2 -o lib/libGLEW.so.2.2.0 "CMakeFiles/glew.dir/home/azula/Downloads/glew-2.2.0/src/glew.c.o"  -lGL -lSM -lICE -lX11 -lXext 

@@ -1,0 +1,11 @@
+/home/azula/Downloads/glew-2.2.0/build/CMakeFiles/glew.dir
+/home/azula/Downloads/glew-2.2.0/build/CMakeFiles/glew_s.dir
+/home/azula/Downloads/glew-2.2.0/build/CMakeFiles/glewinfo.dir
+/home/azula/Downloads/glew-2.2.0/build/CMakeFiles/visualinfo.dir
+/home/azula/Downloads/glew-2.2.0/build/CMakeFiles/uninstall.dir
+/home/azula/Downloads/glew-2.2.0/build/CMakeFiles/edit_cache.dir
+/home/azula/Downloads/glew-2.2.0/build/CMakeFiles/rebuild_cache.dir
+/home/azula/Downloads/glew-2.2.0/build/CMakeFiles/list_install_components.dir
+/home/azula/Downloads/glew-2.2.0/build/CMakeFiles/install.dir
+/home/azula/Downloads/glew-2.2.0/build/CMakeFiles/install/local.dir
+/home/azula/Downloads/glew-2.2.0/build/CMakeFiles/install/strip.dir

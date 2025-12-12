@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG -rdynamic "CMakeFiles/glewinfo.dir/home/azula/Downloads/glew-2.2.0/src/glewinfo.c.o" -o bin/glewinfo  -Wl,-rpath,/home/azula/Downloads/glew-2.2.0/build/lib: lib/libGLEW.so.2.2.0 -lSM -lICE -lX11 -lXext -lGL -lSM -lICE -lX11 -lXext 

@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG -rdynamic "CMakeFiles/visualinfo.dir/home/azula/Downloads/glew-2.2.0/src/visualinfo.c.o" -o bin/visualinfo  -Wl,-rpath,/home/azula/Downloads/glew-2.2.0/build/lib: lib/libGLEW.so.2.2.0 -lSM -lICE -lX11 -lXext -lGL -lSM -lICE -lX11 -lXext 
