@@ -6,4 +6,4 @@ add_library(httplib STATIC
     httplib.cpp
 )	
 target_include_directories(httplib PUBLIC .)
-target_link_libraries(httplib PUBLIC ws2_32.lib)
+# target_link_libraries(httplib PUBLIC ws2_32.lib)

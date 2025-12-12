@@ -940,6 +940,16 @@ public:
             auto number2 = args.at(1)->get<double>();
             return number1 / number2;
         });
+        env.add_callback("safe_xml_text", 1, [](inja:: Arguments args) {
+            string topic = args.at(0)->get<string>();
+            util::replace_all(topic, "&", "&amp;");
+            util::replace_all(topic, ">", "&gt;");
+            util::replace_all(topic, "<", "&lt;");
+            util::replace_all(topic, "\"", "&quot;");
+            util::replace_all(topic, "\'", "&apos;");
+            return topic;
+        });
+
         try{
             Template temp = env.parse_template(".//templates//svg.txt");
             Template temp1 = env.parse_template(".//templates//lunasvg.txt");
@@ -1221,7 +1231,7 @@ public:
                             string explanation, topic;
                             explanation = i["explanation"];
                             topic = i["topic"];
-                            util::wrap_word(explanation, 1.5f*std::sqrtf(explanation.size()));
+                            util::wrap_word(explanation, 1.5f*std::sqrt(static_cast<float>(explanation.size())));
                             util::replace_all(topic, "_", " ");
                             util::wrap_word(topic, 20);
                             m_node_labels.push_back(topic);

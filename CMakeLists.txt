@@ -32,15 +32,24 @@ set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_CURRENT_SOURCE_DIR}/icon/app.rc")
 set(THIRD_PARTY_PATH ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty)
 set(BASE64_PATH ${THIRD_PARTY_PATH}/base64)
 set(FMT_PATH ${THIRD_PARTY_PATH}/fmt)
-set(GLEW_PATH ${THIRD_PARTY_PATH}/glew)
+set(GLEW_PATH ${THIRD_PARTY_PATH}/glew/build/cmake)
 set(GLFW_PATH ${THIRD_PARTY_PATH}/glfw)
 set(HTTPLIB_PATH ${THIRD_PARTY_PATH}/httplib)
 set(IMGUI_PATH ${THIRD_PARTY_PATH}/imgui)
 set(INJA_PATH ${THIRD_PARTY_PATH}/inja)
 set(JSON_PATH ${THIRD_PARTY_PATH}/json)
 set(LAYOUT_PATH ${THIRD_PARTY_PATH}/layout)
-set(NFD_PATH ${THIRD_PARTY_PATH}/nfd)
+set(NFD_PATH ${THIRD_PARTY_PATH}/nfd-1.2.1)
 set(STB_IMAGE_PATH ${THIRD_PARTY_PATH}/stb_image)
+
+option(GLFW_BUILD_WAYLAND "Build support for Wayland" OFF)
+option(GLFW_BUILD_X11 "Build support for X11" ON)
+option(NFD_PORTAL "Use xdg-desktop-portal instead of GTK" ON)
+option(GLFW_BUILD_EXAMPLES "Build the GLFW example programs" OFF)
+option(GLFW_BUILD_TESTS "Build the GLFW test programs" OFF)
+option(GLFW_BUILD_DOCS "Build the GLFW documentation" OFF)
+option(GLFW_INSTALL "Generate installation target" OFF)
+option(GLFW_DOCUMENT_INTERNALS "Include internals in documentation" OFF)
 
 add_subdirectory(${BASE64_PATH})
 add_subdirectory(${FMT_PATH})
@@ -51,24 +60,15 @@ add_subdirectory(${JSON_PATH})
 add_subdirectory(${LAYOUT_PATH})
 add_subdirectory(${NFD_PATH})
 add_subdirectory(${STB_IMAGE_PATH})
-target_link_libraries(imgui PUBLIC libopengl32.a glew glfw)
+add_subdirectory(${GLEW_PATH})
+add_subdirectory(${GLFW_PATH})
 
-add_library(glew STATIC IMPORTED)
-add_library(glfw STATIC IMPORTED)
-set_target_properties(glew
-  PROPERTIES
-    IMPORTED_LOCATION_DEBUG ${GLEW_PATH}/glew32.lib
-    IMPORTED_LOCATION_RELEASE ${GLEW_PATH}/glew32.lib
-    INTERFACE_INCLUDE_DIRECTORIES ${GLEW_PATH}/include
-)
-set_target_properties(glfw
-    PROPERTIES
-    IMPORTED_LOCATION_DEBUG ${GLFW_PATH}/glfw3dll.lib
-    IMPORTED_LOCATION_RELEASE ${GLFW_PATH}/glfw3dll.lib
-    INTERFACE_INCLUDE_DIRECTORIES ${GLFW_PATH}/include
-)
+find_package(OpenGL REQUIRED)
+target_link_directories(imgui PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/thirdparty/glfw/src)
+target_link_libraries(imgui PUBLIC OpenGL::GL glfw3)
+target_include_directories(imgui PUBLIC ${GLEW_PATH}/include ${GLFW_PATH}/include ${GLFW_PATH}/deps)
 
-add_executable(${APP_NAME}  WIN32 src/mindmap.cpp src/main.cpp ${APP_ICON_RESOURCE_WINDOWS})
+add_executable(${APP_NAME}  src/mindmap.cpp src/main.cpp ${APP_ICON_RESOURCE_WINDOWS})
 target_link_libraries(${APP_NAME} PRIVATE base64 fmt httplib imgui fonts inja json vpsc avoid cola nfd stb_image)
 target_compile_options(${APP_NAME} PRIVATE -Wno-stringop-overflow)
 
