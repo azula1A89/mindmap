@@ -940,6 +940,15 @@ public:
             auto number2 = args.at(1)->get<double>();
             return number1 / number2;
         });
+        env.add_callback("safe_xml_text", 1, [](inja:: Arguments args) {
+            string topic = args.at(0)->get<string>();
+            util::replace_all(topic, "&", "&amp;");
+            util::replace_all(topic, ">", "&gt;");
+            util::replace_all(topic, "<", "&lt;");
+            util::replace_all(topic, "\"", "&quot;");
+            util::replace_all(topic, "\'", "&apos;");
+            return topic;
+        });
         try{
             Template temp = env.parse_template(".//templates//svg.txt");
             Template temp1 = env.parse_template(".//templates//lunasvg.txt");
@@ -1354,4 +1363,5 @@ private:
 };
 
 } // namespace mindmap_command
+
 
