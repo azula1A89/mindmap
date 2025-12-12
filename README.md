@@ -52,9 +52,10 @@ A simple yet fast mindmap editor written in C++. You can also call LLM to get so
 
 
 # Build Environment
-Only [Windows-MSYS2-UCRT64](https://www.msys2.org/docs/environments/) supported(currently). Try [binary](https://github.com/azula1A89/mindmap/releases/download/tagv1.0.0/bin.zip).
-I am not familiar with the Linux environment, so I have only compiled and tested it under the Windows operating system.
-## How to install build environment
+  * On Windows use [Windows-MSYS2-UCRT64](https://www.msys2.org/docs/environments/). Try [pre-build binary for windows](https://github.com/azula1A89/mindmap/releases/download/tagv1.0.0/bin.zip).
+  * This [linux-compile](https://github.com/azula1A89/mindmap/tree/linux-compile) branch compiled on Linux Mint 22.1 Cinnamon. Try [pre-build binary for linux](https://github.com/azula1A89/mindmap/releases/download/tag-linux-v1.00/bin-linux.zip).
+
+## How to install windows build environment
 Following [guide](https://www.msys2.org/) download and install the installer. 
 Then open the MSYS2-UCRT64 shell and install these packages:
 ```shell 
@@ -64,7 +65,7 @@ pacman -S mingw-w64-ucrt-x86_64-cmake
 pacman -S mingw-w64-ucrt-x86_64-glfw
 ```
 
-## How to build
+## How to build on Windows
 
 After installing the environment, open the MSYS2-UCRT64 shell and execute the following command:
 ```shell
@@ -74,6 +75,19 @@ mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 ninja
+```
+## How to build on Linux Mint 22.1 Cinnamon(other distro not tested)
+
+```shell
+sudo apt-get update
+sudo apt-get install -y build-essential libxmu-dev libxi-dev libgl-dev cmake git libglu1-mesa-dev
+git clone https://github.com/azula1A89/mindmap.git
+cd mindmap
+git checkout linux-compile
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j
 ```
 
 # third-party code
