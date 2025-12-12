@@ -15,9 +15,9 @@
         {% set lines = split(cluster.label, "\n") %}
         {% for line in lines %}
           {% if loop.is_first %}
-            <tspan x="{{cluster.rect_x}}" dy="">{{line}}</tspan>
+            <tspan x="{{cluster.rect_x}}" dy="">{{safe_xml_text(line)}}</tspan>
           {%else%}
-            <tspan x="{{cluster.rect_x}}" dy="{{ cluster.font_size }}">{{line}}</tspan>
+            <tspan x="{{cluster.rect_x}}" dy="{{ cluster.font_size }}">{{safe_xml_text(line)}}</tspan>
           {%endif%}
         {% endfor %}
       </text>
@@ -41,9 +41,9 @@
         {% set lines = split(edge.label, "\n") %}
         {% for line in lines %}
           {% if loop.is_first %}
-            <tspan x="{{edge.label_x}}" dy="0">{{line}}</tspan>
+            <tspan x="{{edge.label_x}}" dy="0">{{safe_xml_text(line)}}</tspan>
           {%else%}
-            <tspan x="{{edge.label_x}}" dy="1em">{{line}}</tspan>
+            <tspan x="{{edge.label_x}}" dy="1em">{{safe_xml_text(line)}}</tspan>
           {%endif%}
         {% endfor %}
       </text>
@@ -58,9 +58,9 @@
       {% set lines = split(node.label, "\n") %}
       {% for line in lines %}
         {% if loop.is_first %}
-          <tspan x="{{node.rect_x + 0.5*(node.rect_width - node.label_width)}}" dy="0">{{line}}</tspan>
+          <tspan x="{{node.rect_x + 0.5*(node.rect_width - node.label_width)}}" dy="0">{{safe_xml_text(line)}}</tspan>
         {%else%}
-          <tspan x="{{node.rect_x + 0.5*(node.rect_width - node.label_width)}}" dy="1em">{{line}}</tspan>
+          <tspan x="{{node.rect_x + 0.5*(node.rect_width - node.label_width)}}" dy="1em">{{safe_xml_text(line)}}</tspan>
         {%endif%}
       {% endfor %}
     </text>
@@ -71,5 +71,6 @@
   </g>
 
 </svg>
+
 
 
